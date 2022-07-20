@@ -1,0 +1,42 @@
+<!doctype html>
+{% load django_bootstrap5 %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endblock styles %}
+
+    <link rel="icon" type="image/png" href="{% static 'images/Netflix.png' %}">
+
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+</head>
+<body>
+
+{% block content %}
+
+{%endblock%}
+
+{% block scripts %}
+{% bootstrap_javascript %}
+<script src="https://kit.fontawesome.com/aee799c668.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock scripts %}
+
+<footer>
+    <small>This product uses the TMDB API but is not endorsed or certified by TMDB</small>
+    <small>Copyright &copy; 2022 Wayne Musungu</small>
+</footer>
+</body>
+</html>
