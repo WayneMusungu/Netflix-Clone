@@ -16,7 +16,7 @@ Netflix Clone
     <div class="banner__contents">
         <h1 class="banner__title">{{ banner.original_title }}</h1>
         <div class="banner__buttons">
-
+            <a href="{% url 'play' banner.id %}">
                 <button class="banner__button bg-danger" type="button">
                     <i class="fa-solid fa-play"></i>
                     Play
@@ -68,7 +68,7 @@ Netflix Clone
                                     </p>
                                     <p>{{ movie.overview }}</p>
                                     <div class="banner__buttons">
-                                       
+                                        <a href="{% url 'play' movie.id %}">
                                             <button class="banner__button bg-danger" type="button">
                                                 <i class="fa-solid fa-play"></i>
                                                 Play
@@ -126,7 +126,7 @@ Netflix Clone
                                     </p>
                                     <p>{{ movie.overview }}</p>
                                     <div class="banner__buttons">
-                                        
+                                        <a href="{% url 'play' movie.id %}">
                                             <button class="banner__button bg-danger" type="button">
                                                 <i class="fa-solid fa-play"></i>
                                                 Play
@@ -184,7 +184,7 @@ Netflix Clone
                                     </p>
                                     <p>{{ movie.overview }}</p>
                                     <div class="banner__buttons">
-                                       
+                                        <a href="{% url 'play' movie.id %}">
                                             <button class="banner__button bg-danger" type="button">
                                                 <i class="fa-solid fa-play"></i>
                                                 Play
@@ -242,7 +242,7 @@ Netflix Clone
                                     </p>
                                     <p>{{ movie.overview }}</p>
                                     <div class="banner__buttons">
-                                       
+                                        <a href="{% url 'play' movie.id %}">
                                             <button class="banner__button bg-danger" type="button">
                                                 <i class="fa-solid fa-play"></i>
                                                 Play
@@ -358,7 +358,7 @@ Netflix Clone
                                     </p>
                                     <p>{{ movie.overview }}</p>
                                     <div class="banner__buttons">
- 
+                                        <a href="{% url 'play' movie.id %}">
                                             <button class="banner__button bg-danger" type="button">
                                                 <i class="fa-solid fa-play"></i>
                                                 Play
@@ -415,7 +415,7 @@ Netflix Clone
                                     </p>
                                     <p>{{ movie.overview }}</p>
                                     <div class="banner__buttons">
-                                       
+                                        <a href="{% url 'play' movie.id %}">
                                             <button class="banner__button bg-danger" type="button">
                                                 <i class="fa-solid fa-play"></i>
                                                 Play
