@@ -46,3 +46,8 @@ def login(request):
 def home(request):
     return render(request, 'index.html')
 
+def profile(request):
+    return render(request, 'profile.html')
+
+def logout(request):
+    return redirect('home')
