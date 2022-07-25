@@ -4,6 +4,7 @@ from django.contrib import messages
 from .forms import CreateUserForm, LoginUserForm
 
 
+
 # Create your views here.
 def register(request):
     if request.user.is_authenticated:
@@ -23,8 +24,8 @@ def register(request):
 
     return render(request, 'register.html', {'form': form})
 
-def login(request):
 
+def login(request):
     if request.user.is_authenticated:
         return redirect('home')
     else:
@@ -37,12 +38,10 @@ def login(request):
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
-            login(request, user)
+            # login(request, user)
             return redirect('home')
 
     return render(request, 'login.html', {'form':form})
-
-
 
 def home(request):
     return render(request, 'index.html')
