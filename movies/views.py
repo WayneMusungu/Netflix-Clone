@@ -81,6 +81,25 @@ def home(request):
     }
     return render(request, 'index.html', context)
 
+def play(request, movie_id):
+    data = get_video(movie_id)
+    video_info = data['results'][0]
+    youtube_url = f"www.youtube.com/watch?v={video_info['key']}"
+
+    return render(request, 'play.html', {'url': youtube_url})
+
+def search(request):
+    if request.method == 'POST':
+        term = request.POST.get('term')
+
+        response = multi_search(term)
+        res = response['results']
+
+        if len(res) > 0:
+            return render(request, 'search.html', {'results': res})
+    
+    return render(request, 'search.html')
+
 def profile(request):
     return render(request, 'profile.html')
 
