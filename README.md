@@ -14,7 +14,7 @@
 This is a Netflix clone website using The Movie Database API and **Django** as backend framework. This application enables users to view the latest trending movies and view their video trailer and get detailed information on their ratings.
  
 #### Website Screenshot
-![LANDING PAGE](netflixhome.png)
+![LANDING PAGE](netflixscreenshot.png)
 
 #### Technologies used
     - Python 3.8
@@ -48,7 +48,7 @@ Open [localhost:8000](http://127.0.0.1:8000/)
 
 ##### Link to Live Site
 
-(https://waynemovie.herokuapp.com/)
+(https://waynenetflix.herokuapp.com/login/?next=/)
 
 # License
 
