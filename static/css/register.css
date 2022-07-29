@@ -1,7 +1,7 @@
 .register {
     min-height: 100vh;
     width: auto;
-    background: linear-gradient(rgba(37, 37, 37, 0.459),rgba(37, 37, 37, 0.459)), url('../images/netflix_register_bg.jpg');
+    background: linear-gradient(rgba(37, 37, 37, 0.459),rgba(37, 37, 37, 0.459)), url('../images/register_bg.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -42,4 +42,12 @@
 
 .register form button:hover {
     background-color: rgba(255, 0, 0, 0.836);
+}
+#login {
+    min-height: 100vh;
+    width: auto;
+    background: linear-gradient(rgba(37, 37, 37, 0.459),rgba(37, 37, 37, 0.459)), url('../images/background.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }

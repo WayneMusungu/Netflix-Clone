@@ -1,0 +1,18 @@
+
+{% load static %}
+{% block styles %} 
+    
+        <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    {% endblock %}
+<nav class="navbar navbar-dark bg-dark navbar-expand-md">
+    <a href="{% url 'home' %}" class="navbar-brand">Netflix Clone</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbar">
+        <div class="navbar-nav ms-auto">
+            <a href="{% url 'logout' %}" class="nav-item nav-link">Logout</a>
+        </div>
+    </div>
+    
+</nav>

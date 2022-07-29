@@ -1,0 +1,26 @@
+/* .navbar{
+    top: 0;
+    position: fixed;
+    width: 100.5%;
+    margin: 0 0 1em 0;
+}
+
+.navbar-dark .navbar-brand {
+    color: #3CCF4E;
+}
+
+
+
+.nav-nab{
+    margin-top: 10px;
+} */
+
+.navbar-dark .navbar-brand{
+    color: #3CCF4E;
+}
+.navbar-dark a:hover{
+
+    color:red!important;
+
+
+  }

@@ -4,83 +4,93 @@ from django.contrib import messages
 from .forms import CreateUserForm, LoginUserForm
 from .api_requests import *
 import random
-
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-def register(request):
+def registerPage(request):
+    
     if request.user.is_authenticated:
         return redirect('home')
     else:
         form = CreateUserForm()
-
-    if request.method =='POST':
+    
+    if request.method == "POST":
         form = CreateUserForm(request.POST)
-
+        
         if form.is_valid():
-            username = form.cleaned_data.get('username')
             form.save()
+            username = form.cleaned_data.get('username')
             messages.success(request, f'Account created for {username}')
-
             return redirect('login')
-
+            
     return render(request, 'register.html', {'form': form})
 
 
-def login(request):
+def loginPage(request):
+    
     if request.user.is_authenticated:
         return redirect('home')
     else:
         form = LoginUserForm()
-
-    if request.method == 'POST':
+    
+    if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password1')
-
-        user = authenticate(request, username=username, password=password)
-
+        
+        user  = authenticate(request, username=username, password=password)
+        
         if user is not None:
-            # login(request, user)
+            login(request, user)
             return redirect('home')
+            
+    return render(request, 'login.html', {'form': form})
 
-    return render(request, 'login.html', {'form':form})
 
+@login_required(login_url='login')
+def profilePage(request):
+    return render(request, 'profile.html')
+
+
+@login_required(login_url='login')
 def home(request):
-     # TRENDING MOVIES
+    # banner and trending
     movie = get_trending()
-    random_movie = random.randrange(0,18)
+    random_movie = random.randrange(0, 18)
     banner = movie['results'][random_movie]
     trending = movie['results']
-
-    # TOP RATED MOVIES
+    # top_rated
     top_rated = get_top_rated()
-
-    # ACTION MOVIES - getting by genre_id which is 28
+    
+    # action movies
     action = get_genre(28)
-
-    # COMEDY MOVIES - getting by genre_id which is 35
+    
+    # comedy movies
     comedy = get_genre(35)
-
-    # CRIME MOVIES - getting by genre_id which is 80
+    
+    # horror movies
     crime = get_genre(80)
-
-    # FANTASY MOVIES - getting by genre_id which is 14
+    
+    # family movies
     fantasy = get_genre(14)
-
-    # ACTION MOVIES - getting by genre_id which is 99
+    
+    # documentary movies
     documentary = get_genre(99)
 
-    context = {
-        'banner': banner,
-        'trending': trending,
-        'top_rated': top_rated['results'],
-        'action': action['items'],
-        'comedy': comedy['items'],
-        'fantasy':fantasy['items'],
-        'documentary': documentary['items'],
+    return render(request,
+                  'index.html',
+                  {
+                      'banner': banner,
+                      'trending': trending,
+                      'top_rated': top_rated['results'],
+                      'action': action['items'],
+                      'comedy': comedy['items'],
+                      'crime': crime['items'],
+                      'fantasy': fantasy['items'],
+                      'documentary': documentary['items'],
+                  })
 
-    }
-    return render(request, 'index.html', context)
 
+@login_required(login_url='login')
 def play(request, movie_id):
     data = get_video(movie_id)
     video_info = data['results'][0]
@@ -88,20 +98,24 @@ def play(request, movie_id):
 
     return render(request, 'play.html', {'url': youtube_url})
 
+
+@login_required(login_url='login')
 def search(request):
-    if request.method == 'POST':
-        term = request.POST.get('term')
-
-        response = multi_search(term)
-        res = response['results']
-
-        if len(res) > 0:
-            return render(request, 'search.html', {'results': res})
     
+    if request.method == "POST":
+        term = request.POST.get('term')
+        
+        response = multi_search(term)
+    
+        results = response['results']
+        
+        if len(results) > 0 :
+            return render(request, 'search.html', {'results': results})
+
     return render(request, 'search.html')
 
-def profile(request):
-    return render(request, 'profile.html')
 
-def logout(request):
-    return redirect('register')
+@login_required(login_url='login')
+def logoutUser(request):
+    logout(request)
+    return redirect('login')
