@@ -53,6 +53,7 @@ def profilePage(request):
 
 @login_required(login_url='login')
 def home(request):
+    
     # banner and trending
     movie = get_trending()
     random_movie = random.randrange(0, 18)
