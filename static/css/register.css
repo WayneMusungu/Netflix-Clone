@@ -1,7 +1,7 @@
 .register {
     min-height: 100vh;
     width: auto;
-    background: linear-gradient(rgba(37, 37, 37, 0.459),rgba(37, 37, 37, 0.459)), url('../images/background.png');
+    background: linear-gradient(rgba(37, 37, 37, 0.459),rgba(37, 37, 37, 0.459)), url('../images/netflix_register_bg.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -9,14 +9,14 @@
 
 .register form {
     background-color: rgba(17, 17, 17, 0.63);
-    border-radius: 15px !important;
 }
 
 .register form input {
-     background-color: rgb(63, 62, 62) !important;
+    border-radius: none !important;
+    background-color: rgb(63, 62, 62) !important;
     color: rgb(255, 255, 255) !important;
     border: none !important;
-    border-radius: 15px !important;
+    border-radius: 1px !important;
     outline: none !important;
     padding: 1rem 1rem;
     font-size: 1.2rem;
@@ -42,8 +42,4 @@
 
 .register form button:hover {
     background-color: rgba(255, 0, 0, 0.836);
-}
-
-#login {
-    background: linear-gradient(rgba(37, 37, 37, 0.459),rgba(37, 37, 37, 0.459)), url('../images/register_bg.jpg');
 }

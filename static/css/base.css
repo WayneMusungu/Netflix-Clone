@@ -1,65 +1,65 @@
 * {
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #111;
-  }
-  
-  /* nav */
-  
-  .nav__logo {
-    height: 5rem;
-    width: auto;
-  }
-  
-  .nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 2px 20px;
-    /* background-color: #111; */
-    z-index: 1;
-    transition-timing-function: ease-in;
-    transition: all 0.5s;
-  }
-  
-  .nav__black {
-    background-color: #111;
-  }
-  
-  form {
-   padding-top: 1rem;
-  }
-  
-  .form-control{
-      border-radius: 7px;
-      border: 1.5px solid #E3E6ED;
-  }
-  
-  input.form-control:focus{
-      box-shadow: none;
-      border: 1.5px solid #E3E6ED;
-      background-color: #F7F8FD;
-      letter-spacing: 1px;
-  }
-  button.search {
-      border-radius: 7px;
-  }
-  
-  #profile {
-    height: 2.5rem;
-    width: auto;
-  }
-  
-  footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #FFF;
-  }
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #111;
+}
+
+/* nav */
+
+.nav__logo {
+  height: 5rem;
+  width: auto;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 20px;
+  /* background-color: #111; */
+  z-index: 1;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
+.nav__black {
+  background-color: #111;
+}
+
+form {
+ padding-top: 1rem;
+}
+
+.form-control{
+	border-radius: 7px;
+	border: 1.5px solid #E3E6ED;
+}
+
+input.form-control:focus{
+	box-shadow: none;
+	border: 1.5px solid #E3E6ED;
+	background-color: #F7F8FD;
+	letter-spacing: 1px;
+}
+button.search {
+	border-radius: 7px;
+}
+
+#profile {
+  height: 2.5rem;
+  width: auto;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+}
